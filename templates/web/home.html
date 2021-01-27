@@ -1,0 +1,164 @@
+{% extends 'web/layout.html' %}
+{% block container %}
+
+    <div class="row">
+        <div class="col-md-9">
+            <div class="row">
+                <div class="col-md-8 text-left">
+                    {% for article in articles[:1] %}
+                        <div class="card border-0">
+                            <a href="/{{ article.slug }}/{{ article .id }}" class="product-thumb">
+                                <img src="https://baoninhbinh.org.vn/{{ article.thump }}">
+                            </a>
+                            <div class="card-body pl-0 pr-0">
+                                <a href="">
+                                    <h5>
+                                        {{ article.title }}
+                                    </h5>
+                                </a>
+                                <p class="card-text">
+                                    {{ article.description }}
+                                </p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="col-md-4">
+                    <div>
+
+                        <ul class="list-group list-group-flush small">
+                            <li class="list-group-item p-2 text-left bg-danger text-white font-weight-bold">Tin mới</li>
+                            {% for article in article_news %}
+                                <li class="list-group-item p-2">
+                                    <a href="/{{ article.slug }}/{{ article .id }}">
+                                        {{ article.title }}
+                                    </a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                {% for article in articles[:4] %}
+                    <div class="col-md-3">
+                        <div>
+                            <a href="/{{ article.slug }}/{{ article .id }}">
+                                <img src="https://baoninhbinh.org.vn/{{ article.thump }}" class="img-fluid rounded-0">
+                            </a>
+                        </div>
+                        <div class="mt-2">
+                            <a href="/{{ article.slug }}/{{ article .id }}">
+                                {{ article.title }}
+                            </a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="row mt-4">
+                <div class="col-12">
+                    <a href="/" class="capture-2 d-block">
+                        <img src="/static/img/huong-toi-dhdb-toan-quoc-lan-thu-xiii-cua-dang-86baf.jpg" class="img-fluid">
+
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div id="video-post" class="card border-0">
+                        <div class="box">
+                            <div class="box-head">
+                                <h3 class="text-primary">Video</h3>
+                            </div>
+                            <div class="box-body">
+                                <div class="row">
+                                    {% for article in articles[:1] %}
+                                        <div class="col-md-8">
+                                            <div class="thump-video">
+                                                <a href="/{{ article.slug }}/{{ article.id }}">
+                                                    <img src="https://baoninhbinh.org.vn/{{ article.thump }}">
+                                                </a>
+                                            </div>
+
+                                            <a href="/{{ article.slug }}/{{ article.id }}">
+
+                                                <h3 class="text-dark">{{ article.title }}</h3>
+
+                                            </a>
+                                            <p>{{ article.description }}</p>
+
+                                        </div>
+                                    {% endfor %}
+                                    <div class="col-md-4 p-0">
+                                        <div class="list-video">
+
+                                            {% for article in articles[:10] %}
+                                                <div class="media">
+                                                    <a href="">
+                                                        <img src="https://baoninhbinh.org.vn/{{ article.thump }}" class="img-fluid">
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <a href="" class="text-dark">[Video] {{ article.title }}</a>
+                                                    </div>
+                                                </div>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {% for cate in cates %}
+                <div class="box politic">
+                    <div class="box-head">
+                        <h3 style="color:green">{{ cate.title }}</h3>
+                    </div>
+                    <div class="box-body">
+                        <div class="row">
+                            <div class="col-md-8">
+                                {% for article in cate.articles[:1] %}
+                                    <div class="card border-0 ">
+                                        <a href="/{{ article.slug }}/{{ article.id }}">
+                                            <img src="https://baoninhbinh.org.vn/{{ article.thump }}"
+                                                 class="card-img-top img-fluid img-thumbnail rounded-0" alt="...">
+                                        </a>
+
+                                        <div class="card-body pl-0">
+                                            <a href="/{{ article.slug }}/{{ article.id }}">
+                                                <h5>{{ article.title }}</h5>
+                                            </a>
+
+
+                                            <p class="card-text">{{ article.description }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                            <div class="col-md-4 pl-0">
+                                {% for article in cate.articles[1:] %}
+                                    <div class="media">
+                                        <a href="/{{ article.slug }}/{{ article.id }}">
+                                            <img src="https://baoninhbinh.org.vn/{{ article.thump }}" class="img-fluid">
+                                        </a>
+                                        <div class="media-body">
+                                            <a href="/{{ article.slug }}/{{ article.id }}">{{ article.title }}</a>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+
+        </div>
+        <div class="col-md-3">
+            {% include "web/child/widgets.html" %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'web/layout.html' %}
+{% block container %}
+    <div class="row">
+        <div class="col-12">
+            <h4>{{ article.title }}</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="row">
+                <div class="col-12">
+                    <span class="pl-0"><i class="fas fa-calendar-alt"></i> {{ article.publish.strftime('%H:%M %d/%m/%Y') }}</span>
+                    <a href="#" class="pl-0"><i class="fas fa-print px-2"></i> In bài viết</a>
+                    <a href="mailto:trang1604@gmail.com" class="pl-0"><i class="fas fa-envelope px-2"></i> Gửi mail</a>
+                    <button class="btn btn-primary btn-sm">
+                        <i class="fas fa-thumbs-up"></i>
+                    </button>
+                    <button class="btn btn-primary btn-sm">
+                        <i class="fas fa-share"></i>
+                        Chia Sẻ
+                    </button>
+                    <button class="btn btn-primary btn-sm">
+                        Zalo
+                    </button>
+                </div>
+            </div>
+            <h5 class="mt-4">{{ article.description }}</h5>
+            <div class="row">
+                <div class="col-12">
+                    <img class="img-fluid w-100 mb-4" src="https://baoninhbinh.org.vn/{{ article.thump }}">
+                    {{ article.content |safe }}
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-4">
+            {% include "web/child/widgets.html" %}
+        </div>
+    </div>
+
+    </div>
+{% endblock %}

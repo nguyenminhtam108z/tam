@@ -1,0 +1,217 @@
+<div id="widget">
+    <ul class="list-widget">
+        {% for widget in widgets %}
+            <li>
+                <a href="https://baoninhbinh.org.vn/{{ widget.link }}">
+                    <img src="https://baoninhbinh.org.vn/{{ widget.thump }}" class="img-fluid w-100" title="{{ widget.title }}">
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+    <!-- end-list-widget -->
+    <div class="card">
+        <div id="carouselExampleSlidesOnly" class="carousel slide " data-ride="carousel">
+            <div class="carousel-inner " data-interval="1000">
+                <div class="carousel-item active">
+                    <img src="/static/img/thanh-pho-ninh-binh-babad.gif" class="d-block w-100 img-fluid" alt="...">
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="box native">
+        <div class="box-head">
+            <h3>Nét Đẹp quê hương</h3>
+        </div>
+        <div class="box-body">
+            <a href="">
+                <img src="/static/img/them-diem-check-in-doc-dao-cho-gioi-tre-ninh-binh-540x360.jpg" class="img-fluid"
+                     title="Nam Thiên Đệ Nhị Động">
+            </a>
+            <a href="">"Nam thiên đệ Nhị động" Tam Cốc - Bích Động</a>
+            <div class="row group">
+                <div class="col-md-6 pr-0">
+                    <img src="/static/img/khu-bao-ton-thien-nhien-dat-ngap-nuoc-van-long-nhan-chung-540x360.jpg" class="img-fluid">
+                    <a href="">Thành phố Ninh Bình</a>
+                </div>
+                <div class="col-md-6">
+                    <img src="/static/img/-nam-thien-de-nhi-dong-tam-coc-bich-dong-540x360.jpg" class="img-fluid">
+                    <a href="">
+                        Ninh Bình lọt top những địa điểm du lịch bụi tốt nhất thế giới năm 2020
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="box focus">
+        <div class="box-head">
+            <h3> Tiêu Điểm</h3>
+        </div>
+        <div class="box-body">
+            {% for news in newest %}
+                <div class="media">
+                    <a href="">
+                        <img src="https://baoninhbinh.org.vn/{{ news.thump }}" class="img-fluid">
+                    </a>
+                    <div class="media-body">
+                        <a href="">{{ news.title }}</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+    </div>
+
+    <div class="box read-more">
+        <div class="box-head">
+            <h3>Đọc Nhiều</h3>
+        </div>
+
+        <div class="box-body">
+            {% for read in readmore %}
+                <div class="media">
+                    <a href="">
+                        <img src="https://baoninhbinh.org.vn/{{ read.thump }}" class="img-fluid">
+                    </a>
+                    <div class="media-body">
+                        <a href=""> {{ read.title }}</a>
+                    </div>
+                </div>
+
+
+            {% endfor %}
+        </div>
+
+
+    </div>
+
+    <!-- end read-more -->
+
+    <div class="box local">
+        <div class="box-head">
+            <h3>Trang Địa Phương</h3>
+        </div>
+        <div class="box-body">
+
+            <ul class="list-local">
+                <li>
+                    <a href="" class="">
+                        <i class="far fa-hand-point-right"></i>
+
+
+                        Thành Phố Ninh Bình
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="far fa-hand-point-right"></i>
+
+                        Thành Phố Tam Điệp
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="far fa-hand-point-right"></i>
+
+                        Thành Phố Yên Khánh
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="far fa-hand-point-right"></i>
+
+                        Thành Phố Kim Sơn
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="far fa-hand-point-right"></i>
+
+
+                        Thành Phố Yên Mô
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="far fa-hand-point-right"></i>
+
+                        Thành Phố Hoa Lư
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="far fa-hand-point-right"></i>
+
+                        Thành Phố Gia Viễn
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="far fa-hand-point-right"></i>
+
+                        Thành Phố Nho Quan
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- end diaphuong -->
+
+    <ul class="list-widget">
+        <li>
+            <div class="dropdown">
+                <button class="btn  btn-outline-dark  dropdown-toggle  w-100" type="button"
+                        id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true">
+                    Liên Kết Website
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Tạp Chí Cộng Sản</a>
+                    <a class="dropdown-item" href="#">Sở Thông TIn Và Truyền Thông Ninh Bình</a>
+                    <a class="dropdown-item" href="#">Thông Tấn Xã Việt Nam</a>
+                    <a class="dropdown-item" href="#">Báo Nhân Dân</a>
+                    <a class="dropdown-item" href="#">Quốc Hội Việt Nam</a>
+                    <a class="dropdown-item" href="#">Đảng Cộng Sản Việt Nam</a>
+                    <a class="dropdown-item" href="#">UBND Tỉnh Ninh Bình</a>
+                    <a class="dropdown-item" href="#">Báo VNexpress</a>
+                    <a class="dropdown-item" href="#">Báo Vn.net</a>
+                    <a class="dropdown-item" href="#">Báo Tiền Phong</a>
+                    <a class="dropdown-item" href="#">Báo Thanh Niên</a>
+                    <a class="dropdown-item" href="#">Báo Dân Trí</a>
+                </div>
+            </div>
+        </li>
+    </ul>
+
+    <!-- end tygia -->
+
+    <div class="box to-poll">
+        <div class="box-head">
+            <h3>Thăm Dò Ý Kiến</h3>
+        </div>
+        <div class="box-body">
+            <p>Nhận xét về giao diện mới của báo Ninh Bình</p>
+            <input type="radio" name="t" value="m">
+            <label>Đẹp Và thân thiện,dễ đọc</label><br>
+            <input type="radio" name="t" value="n">
+            <label>Đẹp nhưng chưa thân thiện</label><br>
+            <input type="radio" name="t" value="m">
+            <label>Chưa đẹp nhưng khá thân thiện</label><br>
+            <input type="radio" name="t" value="n">
+            <label>Xấu và không thân thiện</label><br>
+            <div class="check">
+                <input type="checkbox" name="check">
+                <label>Tôi không phải là người máy</label>
+            </div>
+        </div>
+        <button class="btn back btn-sm text-light">Biểu Quyết</button>
+    </div>
+</div>
+<!-- end-thamdo -->
+<ul class="list-widget">
+    <li>
+        <img src="/static/img/khach-san-hoang-son-514b3.gif" class="img-fluid w-100">
+    </li>
+    <li>
+        <img src="/static/img/long-thuy-dang-04e7c.jpg" class="img-fluid w-100">
+    </li>
+</ul>

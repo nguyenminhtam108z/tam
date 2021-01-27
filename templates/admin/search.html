@@ -1,0 +1,21 @@
+{% extends 'web/layout.html' %}
+{% block content %}
+
+    <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Search</h1>
+              <div class="search">
+                    <input type="text" name="" value="" placeholder="Nhập Từ Khóa">
+                    <div class="btnsearch position-relative ">
+                    <a href=""> Tìm Kiếm </a>
+                        </div>
+                </div>
+        </div>
+    </div>
+    </div>
+       {% for dt in data %}
+        <h1>{{  dt.id  }}</h1>
+        <h1>{{ dt.name }}</h1>
+    {% endfor %}
+{% endblock %}

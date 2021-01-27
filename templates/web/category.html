@@ -1,0 +1,87 @@
+{% extends 'web/layout.html' %}
+{% block container %}
+    <div class="row">
+        <div class="col-md-8">
+            <a href="/{{ category.slug }}">
+                <h3>{{ category.title }}</h3>
+            </a>
+            <div class="row">
+                {% for article in articles[:1] %}
+                    <div class="col-md-6 ">
+                        <a href="/{{ article.slug }}/{{ article .id }}">
+                            <img src="https://baoninhbinh.org.vn/{{ article.thump }}">
+                        </a>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="/{{ article.slug }}/{{ article.id }}">
+                            <h5 style="color:black; ">{{ article.title }}</h5>
+
+                        </a>
+                        <p>{{ article.description }}</p>
+                    </div>
+                {% endfor %}
+
+                <div class="row mt-3 pl-4">
+                    {% for article in articles[:4] %}
+                        <div class="col-md-3 pl-2">
+
+                            <div class="list-thumb ">
+                                <a href="/{{ article.slug }}/{{ article.id }}">
+                                    <img src="https://baoninhbinh.org.vn/{{ article.thump }}">
+
+                                </a>
+                                <a href="" style="text-decoration: none; color:#776c6c">{{ article.title }}</a>
+
+
+                            </div>
+
+                        </div>
+                    {% endfor %}
+                </div>
+
+                {#        ----------end-------#}
+            </div>
+
+            {#        ------------------------end-------------------#}
+            <div class="row">
+                <div class="col-md-8 " style="border-right:1px solid #e4dcdc">
+                    <h5>Tin Moi</h5>
+                    {% for article in articles[:10] %}
+                        <div class="row">
+                            <div class="col-md-5">
+                                <a href="">
+                                    <img src="https://baoninhbinh.org.vn/{{ article.thump }}">
+                                </a>
+                            </div>
+                            <div class="col-md-7">
+                                <a href="">
+                                    <h5 style="color:black; "> {{ article.title }}</h5>
+
+                                </a>
+                                <p>{{ article.description }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="col-md-4 sticky-top" style="background-color: yellowgreen; height:600px">
+                    <h5>Tiêu Điểm Mục </h5>
+                    {% for article in articles[:5] %}
+                        <div class="row ">
+                            <div class="col-md-5">
+                                <a href="">
+                                    <img src="https://baoninhbinh.org.vn/{{ article.thump }}">
+                                </a>
+                            </div>
+                            <div class="col-md-7">
+                                <a href="" style="color:black; ">
+                                    <h5 style=" font-size:14px">{{ article.title }}</h5></a></div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            {% include "web/child/widgets.html" %}
+        </div>
+    </div>
+{% endblock %}
